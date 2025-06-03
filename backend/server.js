@@ -20,6 +20,11 @@ app.get('/', (req, res) => {
 app.use('/api/user',userRoutes)
 const PORT = process.env.PORT || 5000;
 
+app.get('/api/chat', (req, res) => {
+    res.send([{ _id: 1, message: 'Hello from backend!' }]);
+  });
+  
+
 app.use(notFound); // Middleware for handling 404 errors
 app.use(errorHandler); // Middleware for handling errors
 
